@@ -325,6 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
+  keepOnScreen: 1
+  isOnScreen: 1
   camWidth: 0
   camHeight: 0
 --- !u!1 &1128747254
@@ -692,6 +694,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -154311268757480388, guid: d8add3c1d67aa14469cde3b2052ac5fc,
+        type: 3}
+      propertyPath: radius
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4737799123954688054, guid: d8add3c1d67aa14469cde3b2052ac5fc,
         type: 3}
       propertyPath: m_LocalPosition.x
