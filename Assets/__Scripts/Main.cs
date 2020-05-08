@@ -44,5 +44,16 @@ public class Main : MonoBehaviour
 
     }
 
+    public void DelayedRestart (float delay)
+    {
+        Invoke("Restart", delay);
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Space-Shmup");
+    }
+
 
 }
