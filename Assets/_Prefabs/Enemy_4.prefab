@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5138268310321738271}
   - component: {fileID: 735758845513460986}
   - component: {fileID: 2490435554639367413}
-  - component: {fileID: 1143389434301371932}
+  - component: {fileID: 5696473097113944202}
   m_Layer: 9
   m_Name: WingL
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1143389434301371932
-SphereCollider:
+--- !u!136 &5696473097113944202
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,8 +89,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3732197966816785198
 GameObject:
@@ -103,7 +104,7 @@ GameObject:
   - component: {fileID: 2718285026925984841}
   - component: {fileID: 2053172849733374134}
   - component: {fileID: 5606289744687901397}
-  - component: {fileID: 3078095399708914357}
+  - component: {fileID: 6098102662014559784}
   m_Layer: 9
   m_Name: WingR
   m_TagString: Untagged
@@ -171,8 +172,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3078095399708914357
-SphereCollider:
+--- !u!136 &6098102662014559784
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,8 +182,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6715240419434061711
 GameObject:
@@ -195,7 +197,7 @@ GameObject:
   - component: {fileID: 3861046277089450838}
   - component: {fileID: 628417968642321007}
   - component: {fileID: 244826724245979082}
-  - component: {fileID: 465628102088755833}
+  - component: {fileID: 2834520573945896971}
   m_Layer: 9
   m_Name: Fuselage
   m_TagString: Untagged
@@ -263,8 +265,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &465628102088755833
-SphereCollider:
+--- !u!136 &2834520573945896971
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -273,8 +275,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6955583794878090525
 GameObject:
@@ -287,6 +290,7 @@ GameObject:
   - component: {fileID: 612343090311624753}
   - component: {fileID: 286710945842801553}
   - component: {fileID: 2875263359517999815}
+  - component: {fileID: 5608553551553737408}
   m_Layer: 9
   m_Name: Enemy_4
   m_TagString: Enemy
@@ -340,6 +344,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ace7179621c1f048bfb7e83fb3c1f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  fireRate: 0.3
+  health: 10
+  score: 100
+  showDamageDuration: 0.1
+  powerUpDropChance: 1
+  originalColors: []
+  materials: []
+  showingDamage: 0
+  damageDoneTime: 0
+  notifiedOfDestruction: 0
+  parts:
+  - name: Cockpit
+    health: 10
+    protectedBy:
+    - Fuselage
+    go: {fileID: 0}
+    mat: {fileID: 0}
+  - name: Fuselage
+    health: 10
+    protectedBy:
+    - WingL
+    - WingR
+    go: {fileID: 0}
+    mat: {fileID: 0}
+  - name: WingL
+    health: 10
+    protectedBy: []
+    go: {fileID: 0}
+    mat: {fileID: 0}
+  - name: WingR
+    health: 10
+    protectedBy: []
+    go: {fileID: 0}
+    mat: {fileID: 0}
+--- !u!114 &5608553551553737408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955583794878090525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1249b49290af241468fafe6a07a8066d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  keepOnScreen: 0
+  isOnScreen: 1
+  camWidth: 0
+  camHeight: 0
+  offRight: 0
+  offLeft: 0
+  offUp: 0
+  offDown: 0
 --- !u!1 &7203404787744714690
 GameObject:
   m_ObjectHideFlags: 0
